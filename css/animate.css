@@ -1,0 +1,108 @@
+.foto1 {
+    animation-duration: 3s;
+    animation-name: aparicion1;
+    animation-iteration-count: 1;
+}
+
+.foto2 {
+    animation-duration: 3.8s;
+    animation-name: aparicion2;
+    animation-iteration-count: 1;
+}
+
+.foto3 {
+    animation-duration: 1.5s;
+    animation-name: aparicion3;
+    animation-iteration-count: 1;
+}
+
+.foto4 {
+    animation-duration: 3.5s;
+    animation-name: aparicion4;
+    animation-iteration-count: 1;
+}
+
+.foto5 {
+    animation-duration: 2s;
+    animation-name: aparicion5;
+    animation-iteration-count: 1;
+}
+
+.foto6 {
+    animation-duration: 4s;
+    animation-name: aparicion6;
+    animation-iteration-count: 1;
+}
+
+@keyframes aparicion1 {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes aparicion2 {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes aparicion3 {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes aparicion4 {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes aparicion5 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes aparicion6 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
