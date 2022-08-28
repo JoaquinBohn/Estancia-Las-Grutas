@@ -408,12 +408,12 @@ a {
 }
 
 .nav-link {
-    transition: font-size 0.5s, font-weight 0.5s;
+    transition: font-weight 0.3s, transform 0.5s;
 }
 
 .nav-link:hover {
-    font-size: 20px;
     font-weight: 600;
+    transform: scale(1.1);
 }
 
 .carousel {
@@ -614,8 +614,12 @@ a {
         background-color: #9bbbb0;
     }
 
+    .nav-link {
+        padding-left: 10px;
+    }
+
     .navbar-nav {
-        opacity: 90%;
+        opacity: 1;
         background-color: #f5f8f8;
         font-size: 15px;
     }
@@ -694,6 +698,10 @@ a {
     .carousel-caption:hover {
         background-color: aliceblue;
         color: black;   
+    }
+
+    .carousel-item img{
+        height: 200px;
     }
 
     
@@ -829,6 +837,10 @@ a {
 
     .navbar {
         background-color: #9bbbb0;
+    }
+
+    .nav-link {
+        padding-left: 10px;
     }
 
     .navbar-nav {
