@@ -398,10 +398,6 @@ a {
     padding-left: 20px;
 }
 
-.navbar {
-    height: 30px;
-}
-
 .container-fluid {
     background-color: #9bbbb0bb;
     height: 30px;
@@ -844,7 +840,7 @@ a {
     }
 
     .navbar-nav {
-        opacity: 90%;
+        opacity: 1;
         background-color: #f5f8f8;
         font-size: 15px;
     }

@@ -1,0 +1,148 @@
+/*Variables*/
+$bg-color: #9bbbb0;
+$color-titulos: rgb(17, 44, 1);
+$size-h1: 40px;
+$size-h2: 30px;
+$font-header: 'Cormorant SC', serif;
+$footer-color: #7A918D;
+/*#93B1A7*/
+
+
+@mixin sizes($height, $width) {
+    height: $height;
+    width: $width;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Etiquetas semanticas*/
+h1 {
+    color: $color-titulos;
+    background-color: $bg-color;
+    opacity: 0.85;
+    text-decoration: underline overline;
+    z-index: 2;
+    font-size: $size-h1;
+    padding: 3px;
+}
+
+h2 {
+    font-size: $size-h2;
+    color: $color-titulos;
+    margin-bottom: 20px;
+    grid-area: titulo;
+    padding-left: 10px;
+    .titulo{
+        grid-area: titulo;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $color-titulos;
+}
+
+body {
+    background-color: $bg-color;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: end;
+    font-family: $font-header;
+    width: 100%;
+    height: 270px;
+    background-image: url('../img/sierras2.png');
+    background-position: center center;
+    background-size: cover;
+    grid-area: header;
+}
+
+footer {
+    display: flex;
+    align-content: flex-start;
+    background-color: $footer-color;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    grid-area: footer;
+    position: absolute absolute;
+    bottom: 0%;
+    h3{
+        padding-left: 30px;
+    }
+}
+
+/*Grids*/
+.grid {
+    @include sizes(100vh, 100%);
+    display: grid;
+    background-position: center center;
+}
+
+.grid-ubicacion {
+    @extend .grid;
+    background-color: $bg-color;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-areas: 
+        "header"
+        "menu"
+        "titulo"
+        "subtitulo"
+        "descripcion"
+        "mapa"
+        "footer";
+}
+
+/*Clases*/
+.menu {
+    display: flex;
+    background-color: $bg-color;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    z-index: 10;
+    width: 100%;
+    opacity: 80%;
+    position: sticky;
+    top: 0;
+    grid-area: menu;
+    .container-fluid {
+        background-color: $bg-color;
+        height: 30px;
+    }
+    .nav-link {
+        transition: font-weight 0.3s, transform 0.5s;
+        &hover{
+            font-weight: 600;
+            transform: scale(1.1);
+        }
+    }
+
+}
+
+.subtitulo {
+    grid-area: subtitulo;
+    padding: 30px 15px 0 10px;
+}
+
+.descripcion {
+    grid-area: descripcion;
+    padding-left: 10px;
+}
+
+.mapa {
+    display: flex;
+    grid-area: mapa;
+    grid-column: 1 / 3;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@import "responsive320";

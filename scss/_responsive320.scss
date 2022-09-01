@@ -1,0 +1,173 @@
+$size-h: 15px;
+$toggler-color: #58887f;
+$bg-color: #9bbbb0;
+$nav-bg-color: #f5f8f8;
+
+
+@mixin menu{
+    justify-content: flex-end;
+    opacity: 1;
+}
+
+@mixin navbar-toggler{
+    position: relative;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    color: $toggler-color;
+}
+
+@mixin navbar-toggler-icon{
+    position: relative;
+    right: 5px;
+    bottom: 5px;
+    width: 15px;
+    height: 15px;
+}
+
+@mixin navbar-nav{
+    opacity: 1;
+    background-color: $nav-bg-color;
+    font-size: $size-h;
+}
+
+/*320px*/
+@media screen and (max-width: 320px){
+
+    .grid-ubicacion{
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+
+    h1{
+        font-size: 130%;
+    }
+
+    header{
+        height: 100px;
+    }
+
+    .menu{
+        @include menu;
+        .navbar{
+            background-color: $bg-color;
+            .container-fluid {
+                background-color: $bg-color;
+                .navbar-brand {
+                    font-size: 17px;
+                }
+                .navbar-toggler {
+                    @include navbar-toggler;
+                    .navbar-toggler-icon {
+                        @include navbar-toggler-icon;
+                    }
+                }
+                .navbar-nav {
+                    @include navbar-nav;
+                    .nav-link {
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }  
+    }
+
+    h2{
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+
+    .subtitulo{
+        font-size: $size-h;
+        padding-left: 10px;
+        padding-top: 0px;
+    }
+
+    .descripcion{
+        h4{
+            font-size: $size-h;
+            padding-right: 5px;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .mapa-embebido{
+        width: 80%;
+        height: 300px;
+    }
+
+    footer h3{
+        font-size: $size-h;
+    }
+}
+
+/*600px*/
+@media screen and (min-width: 321px) and (max-width: 600px){
+
+    .grid-ubicacion{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    h1{
+        font-size: 180%;
+    }
+
+    header{
+        height: 100px;
+    }
+
+    .menu{
+        @include menu;
+        .navbar{
+            background-color: $bg-color;
+            .container-fluid {
+                background-color: $bg-color;
+                .navbar-brand {
+                    font-size: 17px;
+                }
+                .navbar-toggler {
+                    @include navbar-toggler;
+                    .navbar-toggler-icon {
+                        @include navbar-toggler-icon;
+                    }
+                }
+                .navbar-nav {
+                    @include navbar-nav;
+                    .nav-link {
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }  
+    }
+
+    h2{
+        font-size: 25px;
+    }
+
+    .subtitulo{
+        font-size: 20px;
+        padding-left: 10px;
+        padding-top: 0;
+    }
+
+    .descripcion{
+        font-size: 12px;
+        padding-right: 5px;
+        p{
+            font-size: 17px;
+        }
+    }
+
+    iframe{
+        width: 80%;
+        height: 500px;
+    }
+
+    footer{
+        font-size: $size-h;
+    }
+}
