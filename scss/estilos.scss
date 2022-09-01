@@ -5,7 +5,7 @@ $size-h1: 40px;
 $size-h2: 30px;
 $font-header: 'Cormorant SC', serif;
 $footer-color: #7A918D;
-/*#93B1A7*/
+$color-boton: #d7dfdc8f;
 
 
 @mixin sizes($height, $width) {
@@ -117,10 +117,10 @@ footer {
         height: 30px;
     }
     .nav-link {
-        transition: font-weight 0.3s, transform 0.5s;
-        &hover{
-            font-weight: 600;
-            transform: scale(1.1);
+        transition: color 0.5s, background-color 1s;
+        &:hover{
+            color: $color-titulos;
+            background-color: $color-boton;
         }
     }
 

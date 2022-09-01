@@ -404,12 +404,12 @@ a {
 }
 
 .nav-link {
-    transition: font-weight 0.3s, transform 0.5s;
+    transition: color 0.5s, background-color 1s;
 }
 
 .nav-link:hover {
-    font-weight: 600;
-    transform: scale(1.1);
+    color: rgb(17, 44, 1);
+    background-color: #d7dfdc8f;
 }
 
 .carousel {
@@ -611,7 +611,7 @@ a {
     }
 
     .nav-link {
-        padding-left: 10px;
+        padding-left: 5px;
     }
 
     .navbar-nav {

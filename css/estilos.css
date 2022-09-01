@@ -1,5 +1,4 @@
 /*Variables*/
-/*#93B1A7*/
 * {
   margin: 0;
   padding: 0;
@@ -67,7 +66,13 @@ footer {
   background-color: #9bbbb0;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto auto auto auto auto;
-  grid-template-areas: "header" "menu" "titulo" "subtitulo" "descripcion" "mapa" "footer"; }
+  grid-template-areas: "header"
+ "menu"
+ "titulo"
+ "subtitulo"
+ "descripcion"
+ "mapa"
+ "footer"; }
 
 /*Clases*/
 .menu {
@@ -85,10 +90,10 @@ footer {
     background-color: #9bbbb0;
     height: 30px; }
   .menu .nav-link {
-    transition: font-weight 0.3s, transform 0.5s; }
-    .menu .nav-linkhover {
-      font-weight: 600;
-      transform: scale(1.1); }
+    transition: color 0.5s, background-color 1s; }
+    .menu .nav-link:hover {
+      color: #112c01;
+      background-color: #d7dfdc8f; }
 
 .subtitulo {
   grid-area: subtitulo;
