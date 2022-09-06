@@ -4,6 +4,26 @@
   padding: 0;
   box-sizing: border-box; }
 
+/*Clases template*/
+.grid-template, .grid-inicio, .grid-ubicacion, .grid-estadia, .grid-paseos, .grid-galeria {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  background-position: center center; }
+
+.tabla-template, .cabania1, .cabania2, .cabania3, .paseo1, .paseo2, .paseo3 {
+  width: 300px;
+  height: 200px;
+  background-position: center center;
+  background-size: cover; }
+
+.tablas-template, .tablas, .tablas-paseos {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  justify-content: space-around;
+  padding: 20px 20px; }
+
 /*Etiquetas semanticas*/
 h1 {
   color: #112c01;
@@ -47,7 +67,7 @@ footer {
   display: flex;
   align-content: flex-start;
   background-color: #7A918D;
-  padding-top: 10px;
+  margin-top: 10px;
   padding-bottom: 10px;
   grid-area: footer;
   position: absolute absolute;
@@ -55,24 +75,62 @@ footer {
   footer h3 {
     padding-left: 30px; }
 
+table, th, td {
+  border: solid 1px #112c01; }
+
+th {
+  padding-right: 10px;
+  background-color: #959aa0; }
+
+td {
+  padding-right: 10px;
+  text-align: center;
+  background-color: azure; }
+
 /*Grids*/
-.grid, .grid-ubicacion {
-  height: 100vh;
-  width: 100%;
-  display: grid;
-  background-position: center center; }
+.grid-inicio {
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto 400px 600px auto;
+  grid-template-areas: "header header header" "menu menu menu" "eslogan eslogan eslogan" "cabania cabania paseos" "galeria galeria galeria" "footer footer footer"; }
 
 .grid-ubicacion {
   background-color: #9bbbb0;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto auto auto auto auto;
-  grid-template-areas: "header"
- "menu"
- "titulo"
- "subtitulo"
- "descripcion"
- "mapa"
- "footer"; }
+  grid-template-areas: "header" "menu" "titulo" "subtitulo" "descripcion" "mapa" "footer"; }
+
+.grid-estadia {
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-areas: "header" "menu" "titulo" "subtitulo" "tablas" "footer"; }
+
+.tablas {
+  grid-template-areas: "cabania1 cabania2 cabania3";
+  grid-area: tablas; }
+
+.grid-paseos {
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto auto auto auto auto;
+  grid-template-areas: "header" "menu" "titulo" "descripcion" "video" "subtitulo" "tablas-paseos" "footer"; }
+
+.tablas-paseos {
+  grid-template-areas: "paseo1 paseo2 paseo3";
+  grid-area: tablas-paseos; }
+
+.grid-galeria {
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto 600px auto;
+  grid-template-areas: "header" "menu" "titulo" "fotos" "footer"; }
+
+.fotos {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: "foto1 foto1 foto2 foto2" "foto1 foto1 foto3 foto4" "foto5 foto5 foto6 foto6" "foto5 foto5 foto6 foto6";
+  gap: 5px;
+  margin: 0 30px 10px 10px;
+  justify-self: center;
+  width: 70%; }
 
 /*Clases*/
 .menu {
@@ -95,6 +153,56 @@ footer {
       color: #112c01;
       background-color: #d7dfdc8f; }
 
+.eslogan {
+  padding-left: 10px;
+  margin-bottom: 10px;
+  grid-area: eslogan; }
+
+.card, .card-estadia, .card-paseos, .card-galeria {
+  background-position: center center;
+  background-size: cover;
+  border-radius: 5px;
+  margin: 0 10px 0 10px; }
+  .card p, .card-estadia p, .card-paseos p, .card-galeria p {
+    font-size: 20px; }
+
+.card-estadia {
+  grid-area: cabania;
+  background-image: url("../img/cabania.jpg"); }
+
+.card-paseos {
+  grid-area: paseos;
+  background-image: url("../img/paseo.jpg"); }
+
+.card-galeria {
+  grid-area: galeria;
+  background-image: url("../img/sierras3.jpg"); }
+
+.card-description {
+  display: grid;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 80%;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0);
+  transition: color 0.8s, background-color 0.8s; }
+  .card-description:hover {
+    background-color: azure;
+    color: black; }
+  .card-description h3 {
+    font-size: 40px;
+    width: 35%;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, azure, rgba(0, 0, 0, 0)); }
+
+.carousel {
+  display: none; }
+
 .subtitulo {
   grid-area: subtitulo;
   padding: 30px 15px 0 10px; }
@@ -102,6 +210,30 @@ footer {
 .descripcion {
   grid-area: descripcion;
   padding-left: 10px; }
+
+.cabania1 {
+  background-image: url("../img/cabania1.jpg");
+  grid-area: cabania1; }
+
+.cabania2 {
+  background-image: url("../img/cabania2.jpg");
+  grid-area: cabania2; }
+
+.cabania3 {
+  background-image: url("../img/cabania3.jpg");
+  grid-area: cabania3; }
+
+.paseo1 {
+  background-image: url("../img/paseo1.jpg");
+  grid-area: paseo1; }
+
+.paseo2 {
+  background-image: url("../img/paseo2.jpg");
+  grid-area: paseo2; }
+
+.paseo3 {
+  background-image: url("../img/paseo3.jpg");
+  grid-area: paseo3; }
 
 .mapa {
   display: flex;
@@ -111,8 +243,66 @@ footer {
   padding-top: 20px;
   padding-bottom: 20px; }
 
+.video {
+  grid-area: video;
+  padding-left: 20px; }
+
+.foto-template, .foto1, .foto2, .foto3, .foto4, .foto5, .foto6 {
+  background-position: center center;
+  background-size: cover; }
+
+.foto1 {
+  background-image: url("../img/estancia-las-grutas.jpg");
+  grid-area: foto1; }
+
+.foto2 {
+  background-image: url("../img/las-grutas.jpg");
+  grid-area: foto2; }
+
+.foto3 {
+  background-image: url("../img/las-grutas2.jpg");
+  grid-area: foto3; }
+
+.foto4 {
+  background-image: url("../img/cabania1.jpg");
+  grid-area: foto4; }
+
+.foto5 {
+  background-image: url("../img/paseo.jpg");
+  grid-area: foto5; }
+
+.foto6 {
+  background-image: url("../img/sierras3.jpg");
+  grid-area: foto6; }
+
 /*320px*/
 @media screen and (max-width: 320px) {
+  .grid-inicio {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: "header" "menu" "eslogan" "carousel" "footer"; }
+  .tablas {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "cabania1" "cabania2" "cabania3";
+    gap: 20px;
+    padding: 10px; }
+  .tablas-paseos {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "paseo1" "paseo2" "paseo3";
+    gap: 20px;
+    padding: 10px; }
+  .grid-galeria {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: "header" "menu" "titulo" "fotos" "footer"; }
+  .fotos {
+    grid-template-columns: auto auto;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-areas: "foto1 foto2" "foto3 foto4" "foto5 foto6";
+    gap: 5px;
+    margin: 0 20px 5px 5px; }
   .grid-ubicacion {
     grid-template-columns: auto;
     grid-template-rows: auto; }
@@ -147,6 +337,10 @@ footer {
           font-size: 15px; }
           .menu .navbar .container-fluid .navbar-nav .nav-link {
             padding-left: 10px; }
+  .eslogan h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding-left: 5px; }
   h2 {
     font-size: 20px;
     margin-bottom: 0; }
@@ -154,6 +348,54 @@ footer {
     font-size: 15px;
     padding-left: 10px;
     padding-top: 0px; }
+  .card, .card-estadia, .card-paseos, .card-galeria {
+    display: none; }
+  .carousel {
+    grid-area: carousel;
+    display: contents;
+    width: 90%; }
+    .carousel .carousel-indicators {
+      position: absolute;
+      top: 420px; }
+    .carousel .carousel-item {
+      margin: 10px;
+      width: 95%; }
+      .carousel .carousel-item img {
+        height: 250px; }
+      .carousel .carousel-item .carousel-caption {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        opacity: 0.8;
+        color: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0);
+        transition: color 0.8s, background-color 1s; }
+        .carousel .carousel-item .carousel-caption:hover {
+          background-color: azure;
+          color: black; }
+        .carousel .carousel-item .carousel-caption h5 {
+          display: flex;
+          font-size: 25px;
+          justify-content: flex-start;
+          padding-bottom: 10px;
+          color: #112c01;
+          width: 50%;
+          border-radius: 10px;
+          background-image: linear-gradient(to right, azure, rgba(0, 0, 0, 0)); }
+        .carousel .carousel-item .carousel-caption p {
+          padding-left: 5px; }
+    .carousel .carousel-control-prev, .carousel .carousel-control-next {
+      position: absolute;
+      top: 150px; }
+  .cabania1, .cabania2, .cabania3, .paseo1, .paseo2, .paseo3 {
+    width: 230px;
+    height: 110px; }
+  .video-embebido {
+    width: 80%;
+    height: 200px; }
   .descripcion h4 {
     font-size: 15px;
     padding-right: 5px; }
@@ -162,11 +404,29 @@ footer {
   .mapa-embebido {
     width: 80%;
     height: 300px; }
-  footer h3 {
-    font-size: 15px; } }
+  footer {
+    margin-top: 10px; }
+    footer h3 {
+      font-size: 15px; } }
 
 /*600px*/
 @media screen and (min-width: 321px) and (max-width: 600px) {
+  .grid-inicio {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto 150px 300px auto;
+    grid-template-areas: "header header" "menu menu" "eslogan eslogan" "cabania paseos" "galeria galeria" "footer footer"; }
+  .tablas {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "cabania1 cabania2" "cabania3 cabania3";
+    gap: 20px;
+    padding: 10px; }
+  .tablas-paseos {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: "paseo1 paseo2" "paseo3 paseo3";
+    gap: 20px;
+    padding: 10px; }
   .grid-ubicacion {
     grid-template-columns: 1fr;
     grid-template-rows: auto; }
@@ -201,6 +461,22 @@ footer {
           font-size: 15px; }
           .menu .navbar .container-fluid .navbar-nav .nav-link {
             padding-left: 10px; }
+  .eslogan h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding-left: 5px; }
+  .paseo1, .paseo2, .paseo3 {
+    width: 250px;
+    height: 150px; }
+  .video-embebido {
+    width: 80%;
+    height: 300px; }
+  .card-description p {
+    font-size: 20px; }
+  .card-description h3 {
+    padding-left: 5px;
+    font-size: 25px;
+    width: 50%; }
   h2 {
     font-size: 25px; }
   .subtitulo {
@@ -216,4 +492,5 @@ footer {
     width: 80%;
     height: 500px; }
   footer {
+    margin-top: 10px;
     font-size: 15px; } }

@@ -34,6 +34,61 @@ $nav-bg-color: #f5f8f8;
 /*320px*/
 @media screen and (max-width: 320px){
 
+    .grid-inicio{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 
+            "header"
+            "menu"
+            "eslogan"
+            "carousel"
+            "footer";
+    }
+
+    .tablas{
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "cabania1"
+            "cabania2"
+            "cabania3";
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .tablas-paseos{
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "paseo1"
+            "paseo2"
+            "paseo3";
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .grid-galeria {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 
+            "header"
+            "menu"
+            "titulo"
+            "fotos"
+            "footer";
+    }
+
+    .fotos {
+        grid-template-columns: auto auto;
+        grid-template-rows: 100px 100px 100px;
+        grid-template-areas: 
+            "foto1 foto2"
+            "foto3 foto4"
+            "foto5 foto6";
+        gap: 5px;
+        margin: 0 20px 5px 5px;
+    }
+
     .grid-ubicacion{
         grid-template-columns: auto;
         grid-template-rows: auto;
@@ -72,6 +127,12 @@ $nav-bg-color: #f5f8f8;
         }  
     }
 
+    .eslogan h3{
+        font-size: $size-h;
+        margin-bottom: 10px;
+        padding-left: 5px;
+    }
+
     h2{
         font-size: 20px;
         margin-bottom: 0;
@@ -81,6 +142,73 @@ $nav-bg-color: #f5f8f8;
         font-size: $size-h;
         padding-left: 10px;
         padding-top: 0px;
+    }
+
+    .card{
+        display: none;
+    }
+
+    .carousel {
+        grid-area: carousel;
+        display: contents;
+        width: 90%;
+        .carousel-indicators {
+            position: absolute;
+            top: 420px;
+        }
+        .carousel-item {
+            margin: 10px;
+            width: 95%;
+            img {
+                height: 250px;
+            }
+            .carousel-caption {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                text-align: left;
+                opacity: 0.8;
+                color: $transparente;
+                background-color: $transparente;
+                transition: color 0.8s, background-color 1s;
+                &:hover {
+                    background-color: $card-color;
+                    color: black;   
+                }
+                h5{
+                    display: flex;
+                    font-size: 25px;
+                    justify-content: flex-start;
+                    padding-bottom: 10px;
+                    color: $color-titulos;
+                    width: 50%;
+                    border-radius: 10px;
+                    background-image: linear-gradient(to right, $card-color, $transparente);
+                }
+                p{
+                    padding-left: 5px;
+                }
+            }
+        }
+        .carousel-control-prev {
+            position: absolute;
+            top: 150px;
+        }
+        .carousel-control-next {
+            @extend .carousel-control-prev;
+        }
+    }
+
+    .cabania1, .cabania2, .cabania3, .paseo1, .paseo2, .paseo3 {
+        width: 230px;
+        height: 110px;
+    }
+
+    .video-embebido {
+        width: 80%;
+        height: 200px;
     }
 
     .descripcion{
@@ -98,13 +226,48 @@ $nav-bg-color: #f5f8f8;
         height: 300px;
     }
 
-    footer h3{
+    footer {
+        margin-top: 10px;
+        h3{
         font-size: $size-h;
+        }
     }
 }
 
 /*600px*/
 @media screen and (min-width: 321px) and (max-width: 600px){
+
+    .grid-inicio{
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto 150px 300px auto;
+        grid-template-areas: 
+        "header header"
+        "menu menu"
+        "eslogan eslogan"
+        "cabania paseos"
+        "galeria galeria"
+        "footer footer";
+    }
+
+    .tablas{
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "cabania1 cabania2"
+            "cabania3 cabania3";
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .tablas-paseos{
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "paseo1 paseo2"
+            "paseo3 paseo3";
+        gap: 20px;
+        padding: 10px;
+    }
 
     .grid-ubicacion{
         grid-template-columns: 1fr;
@@ -144,6 +307,33 @@ $nav-bg-color: #f5f8f8;
         }  
     }
 
+    .eslogan h3{
+        font-size: $size-h + 5;
+        margin-bottom: 10px;
+        padding-left: 5px;
+    }
+
+    .paseo1, .paseo2, .paseo3 {
+        width: 250px;
+        height: 150px;
+    }
+
+    .video-embebido {
+        width: 80%;
+        height: 300px;
+    }
+
+    .card-description {
+        p{
+            font-size: $size-h + 5;
+        }
+        h3 {
+            padding-left: 5px;
+            font-size: 25px;
+            width: 50%;
+        }
+    }
+
     h2{
         font-size: 25px;
     }
@@ -168,6 +358,7 @@ $nav-bg-color: #f5f8f8;
     }
 
     footer{
+        margin-top: 10px;
         font-size: $size-h;
     }
 }

@@ -52,7 +52,7 @@ body {
         "header"
         "menu"
         "titulo"
-        "cabanias"
+        "subtitulo"
         "tablas"
         "footer";
     background-position: center center;
@@ -241,8 +241,6 @@ a {
     color: black;
 }
 
-/* background-color: #9bbbb0; */
-
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -281,12 +279,6 @@ a {
     justify-content: space-around;
     grid-area: tablas;
     padding: 20px 20px;
-}
-
-.cabanias {
-    padding-bottom: 10px;
-    padding-left: 15px;
-    grid-area: cabanias;
 }
 
 .cabania1 {
@@ -417,7 +409,7 @@ a {
 }
 
 
-#cabania {
+.card-estadia {
     grid-area: cabania;
     background-image: url("../img/cabania.jpg");
     background-position: center center;
@@ -425,7 +417,7 @@ a {
     border-radius: 5px;
 }
 
-#paseos {
+.card-paseos {
     grid-area: paseos;
     background-image: url("../img/paseo.jpg");
     background-position: center center;
@@ -433,7 +425,7 @@ a {
     border-radius: 5px;
 }
 
-#galeria {
+.card-galeria {
     grid-area: galeria;
     background-image: url("../img/sierras3.jpg");
     background-position: center center;
@@ -587,10 +579,6 @@ a {
         font-size: 15px;
     }
 
-    .cabanias {
-        font-size: 12px;
-    }
-
     .cabania1, .cabania2, .cabania3{
         width: 230px;
         height: 110px;
@@ -716,7 +704,7 @@ a {
         "titulo titulo"
         "cabania paseos"
         "galeria galeria"
-        "footer footer";;
+        "footer footer";
     }
 
     .grid-ubicacion{
