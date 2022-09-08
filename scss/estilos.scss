@@ -43,6 +43,11 @@ $card-color: azure;
     padding: 20px 20px;
 }
 
+.foto-template{
+    background-position: center center;
+    background-size:cover;
+}
+
 /*Etiquetas semanticas*/
 h1 {
     color: $color-titulos;
@@ -365,11 +370,6 @@ td {
 .video {
     grid-area: video;
     padding-left: 20px;
-}
-
-.foto-template{
-    background-position: center center;
-    background-size:cover;
 }
 
 .foto1 {
