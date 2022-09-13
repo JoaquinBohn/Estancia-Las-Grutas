@@ -43,6 +43,11 @@ $card-color: azure;
     padding: 20px 20px;
 }
 
+.img-template{
+    @include sizes(300px, 300px);
+    background-position: cover;
+}
+
 .foto-template{
     background-position: center center;
     background-size:cover;
@@ -77,6 +82,14 @@ a {
 
 body {
     background-color: $bg-color;
+}
+
+main{
+    background-color: rgba(240, 255, 255, 0.801);
+    .container{
+        @include sizes(100vh, 100%);
+    }
+    padding-bottom: 10px;
 }
 
 header {
@@ -125,19 +138,6 @@ td {
 }
 
 /*Grids*/
-
-.grid-inicio {
-    @extend .grid-template;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto 400px 600px auto;
-    grid-template-areas: 
-        "header header header"
-        "menu menu menu"
-        "eslogan eslogan eslogan"
-        "cabania cabania paseos"
-        "galeria galeria galeria"
-        "footer footer footer";
-}
 
 .grid-ubicacion {
     @extend .grid-template;
@@ -224,6 +224,26 @@ td {
 }
 
 /*Clases*/
+
+.col-md-4{
+    img{
+        width: 300px;
+        height: 240px;
+    }
+}
+
+.explorar{
+    margin-top: 70px;
+}
+
+.row{
+    margin: 30px;
+}
+
+.col{
+    margin: 10px
+}
+
 .menu {
     display: flex;
     background-color: $bg-color;
@@ -231,7 +251,6 @@ td {
     flex-wrap: wrap;
     z-index: 10;
     width: 100%;
-    opacity: 80%;
     position: sticky;
     top: 0;
     grid-area: menu;
@@ -259,25 +278,27 @@ td {
     background-position: center center;
     background-size: cover;
     border-radius: 5px;
-    margin: 0 10px 0 10px;
     p{
         font-size: 20px;
     }
 }
 
 .card-estadia {
+    height: 300px;
     grid-area: cabania;
     background-image: url("../img/cabania.jpg");
     @extend .card;
 }
 
 .card-paseos {
+    height: 300px;
     grid-area: paseos;
     background-image: url("../img/paseo.jpg");
     @extend .card;
 }
 
 .card-galeria {
+    height: 400px;
     grid-area: galeria;
     background-image: url("../img/sierras3.jpg");
     @extend .card;
@@ -302,7 +323,7 @@ td {
     }
     h3 {
         font-size: $size-h1;
-        width: 35%;
+        width: 45%;
         border-radius: 10px;
         background-image: linear-gradient(to right, $card-color, $transparente);
     }
