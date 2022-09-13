@@ -34,17 +34,6 @@ $nav-bg-color: #f5f8f8;
 /*320px*/
 @media screen and (max-width: 320px){
 
-    .grid-inicio{
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto auto;
-        grid-template-areas: 
-            "header"
-            "menu"
-            "eslogan"
-            "carousel"
-            "footer";
-    }
-
     .tablas{
         grid-template-columns: auto;
         grid-template-rows: auto;
@@ -144,17 +133,17 @@ $nav-bg-color: #f5f8f8;
         padding-top: 0px;
     }
 
-    .card{
+    main{
         display: none;
     }
 
     .carousel {
-        grid-area: carousel;
         display: contents;
         width: 90%;
+        height: 250px;
         .carousel-indicators {
-            position: absolute;
-            top: 420px;
+            position: absolute absolute;
+            top: 360px;
         }
         .carousel-item {
             margin: 10px;
@@ -194,7 +183,7 @@ $nav-bg-color: #f5f8f8;
         }
         .carousel-control-prev {
             position: absolute;
-            top: 150px;
+            top: 100px;
         }
         .carousel-control-next {
             @extend .carousel-control-prev;
@@ -227,7 +216,7 @@ $nav-bg-color: #f5f8f8;
     }
 
     footer {
-        margin-top: 10px;
+        margin-top: 50px;
         h3{
         font-size: $size-h;
         }
@@ -236,18 +225,6 @@ $nav-bg-color: #f5f8f8;
 
 /*600px*/
 @media screen and (min-width: 321px) and (max-width: 600px){
-
-    .grid-inicio{
-        grid-template-columns: auto auto;
-        grid-template-rows: auto auto auto 150px 300px auto;
-        grid-template-areas: 
-        "header header"
-        "menu menu"
-        "eslogan eslogan"
-        "cabania paseos"
-        "galeria galeria"
-        "footer footer";
-    }
 
     .tablas{
         grid-template-columns: auto auto;
@@ -323,14 +300,46 @@ $nav-bg-color: #f5f8f8;
         height: 300px;
     }
 
-    .card-description {
-        p{
-            font-size: $size-h + 5;
+    .card{
+        height: 200px;
+        .card-description {
+            p{
+                font-size: $size-h + 5;
+            }
+            h3 {
+                padding-left: 5px;
+                font-size: 25px;
+                width: 50%;
+            }
         }
-        h3 {
-            padding-left: 5px;
-            font-size: 25px;
-            width: 50%;
+    }
+
+    .col-xs-4{
+        width: 100px;
+        img{
+            width: 150px;
+            height: 100px;
+        }
+    }
+    
+    .col-xs-6{
+        width: 225px;
+        img{
+            width: 200px;
+            height: 140px;
+        }
+    }
+
+    .col-xs-8{
+        width: 400px;
+    }
+
+    .row{
+        h4{
+            font-size: $size-h;
+        }
+        p{
+            font-size: 12px;
         }
     }
 

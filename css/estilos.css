@@ -5,7 +5,7 @@
   box-sizing: border-box; }
 
 /*Clases template*/
-.grid-template, .grid-inicio, .grid-ubicacion, .grid-estadia, .grid-paseos, .grid-galeria {
+.grid-template, .grid-ubicacion, .grid-estadia, .grid-paseos, .grid-galeria {
   height: 100vh;
   width: 100%;
   display: grid;
@@ -23,6 +23,11 @@
   grid-template-rows: auto;
   justify-content: space-around;
   padding: 20px 20px; }
+
+.img-template {
+  height: 300px;
+  width: 300px;
+  background-position: cover; }
 
 /*Etiquetas semanticas*/
 h1 {
@@ -49,6 +54,13 @@ a {
 
 body {
   background-color: #9bbbb0; }
+
+main {
+  background-color: rgba(240, 255, 255, 0.801);
+  padding-bottom: 10px; }
+  main .container {
+    width: 100%;
+    height: 100vh; }
 
 header {
   display: flex;
@@ -88,11 +100,19 @@ td {
   background-color: azure; }
 
 /*Grids*/
-.grid-inicio {
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto 400px 600px auto;
-  grid-template-areas: "header header header" "menu menu menu" "eslogan eslogan eslogan" "cabania cabania paseos" "galeria galeria galeria" "footer footer footer"; }
-
+/* .grid-inicio {
+    @extend .grid-template;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto 400px 600px auto;
+    grid-template-areas: 
+        "header header header"
+        "menu menu menu"
+        "eslogan eslogan eslogan"
+        "presentacion presentacion presentacion"
+        "cabania cabania paseos"
+        "galeria galeria galeria"
+        "footer footer footer";
+} */
 .grid-ubicacion {
   background-color: #9bbbb0;
   grid-template-columns: 1fr;
@@ -133,6 +153,19 @@ td {
   width: 70%; }
 
 /*Clases*/
+.col-md-4 img {
+  width: 300px;
+  height: 240px; }
+
+.explorar {
+  margin-top: 70px; }
+
+.row {
+  margin: 30px; }
+
+.col {
+  margin: 10px; }
+
 .menu {
   display: flex;
   background-color: #9bbbb0;
@@ -140,7 +173,6 @@ td {
   flex-wrap: wrap;
   z-index: 10;
   width: 100%;
-  opacity: 80%;
   position: sticky;
   top: 0;
   grid-area: menu; }
@@ -161,20 +193,22 @@ td {
 .card, .card-estadia, .card-paseos, .card-galeria {
   background-position: center center;
   background-size: cover;
-  border-radius: 5px;
-  margin: 0 10px 0 10px; }
+  border-radius: 5px; }
   .card p, .card-estadia p, .card-paseos p, .card-galeria p {
     font-size: 20px; }
 
 .card-estadia {
+  height: 300px;
   grid-area: cabania;
   background-image: url("../img/cabania.jpg"); }
 
 .card-paseos {
+  height: 300px;
   grid-area: paseos;
   background-image: url("../img/paseo.jpg"); }
 
 .card-galeria {
+  height: 400px;
   grid-area: galeria;
   background-image: url("../img/sierras3.jpg"); }
 
@@ -196,7 +230,7 @@ td {
     color: black; }
   .card-description h3 {
     font-size: 40px;
-    width: 35%;
+    width: 45%;
     border-radius: 10px;
     background-image: linear-gradient(to right, azure, rgba(0, 0, 0, 0)); }
 
@@ -277,10 +311,6 @@ td {
 
 /*320px*/
 @media screen and (max-width: 320px) {
-  .grid-inicio {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto;
-    grid-template-areas: "header" "menu" "eslogan" "carousel" "footer"; }
   .tablas {
     grid-template-columns: auto;
     grid-template-rows: auto;
@@ -348,15 +378,15 @@ td {
     font-size: 15px;
     padding-left: 10px;
     padding-top: 0px; }
-  .card, .card-estadia, .card-paseos, .card-galeria {
+  main {
     display: none; }
   .carousel {
-    grid-area: carousel;
     display: contents;
-    width: 90%; }
+    width: 90%;
+    height: 250px; }
     .carousel .carousel-indicators {
-      position: absolute;
-      top: 420px; }
+      position: absolute absolute;
+      top: 360px; }
     .carousel .carousel-item {
       margin: 10px;
       width: 95%; }
@@ -389,7 +419,7 @@ td {
           padding-left: 5px; }
     .carousel .carousel-control-prev, .carousel .carousel-control-next {
       position: absolute;
-      top: 150px; }
+      top: 100px; }
   .cabania1, .cabania2, .cabania3, .paseo1, .paseo2, .paseo3 {
     width: 230px;
     height: 110px; }
@@ -405,16 +435,12 @@ td {
     width: 80%;
     height: 300px; }
   footer {
-    margin-top: 10px; }
+    margin-top: 50px; }
     footer h3 {
       font-size: 15px; } }
 
 /*600px*/
 @media screen and (min-width: 321px) and (max-width: 600px) {
-  .grid-inicio {
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto 150px 300px auto;
-    grid-template-areas: "header header" "menu menu" "eslogan eslogan" "cabania paseos" "galeria galeria" "footer footer"; }
   .tablas {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
@@ -471,12 +497,30 @@ td {
   .video-embebido {
     width: 80%;
     height: 300px; }
-  .card-description p {
-    font-size: 20px; }
-  .card-description h3 {
-    padding-left: 5px;
-    font-size: 25px;
-    width: 50%; }
+  .card, .card-estadia, .card-paseos, .card-galeria {
+    height: 200px; }
+    .card .card-description p, .card-estadia .card-description p, .card-paseos .card-description p, .card-galeria .card-description p {
+      font-size: 20px; }
+    .card .card-description h3, .card-estadia .card-description h3, .card-paseos .card-description h3, .card-galeria .card-description h3 {
+      padding-left: 5px;
+      font-size: 25px;
+      width: 50%; }
+  .col-xs-4 {
+    width: 100px; }
+    .col-xs-4 img {
+      width: 150px;
+      height: 100px; }
+  .col-xs-6 {
+    width: 225px; }
+    .col-xs-6 img {
+      width: 200px;
+      height: 140px; }
+  .col-xs-8 {
+    width: 400px; }
+  .row h4 {
+    font-size: 15px; }
+  .row p {
+    font-size: 12px; }
   h2 {
     font-size: 25px; }
   .subtitulo {
