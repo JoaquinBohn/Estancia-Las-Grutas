@@ -48,6 +48,11 @@ $card-color: azure;
     background-position: cover;
 }
 
+.foto-template{
+    background-position: center center;
+    background-size:cover;
+}
+
 /*Etiquetas semanticas*/
 h1 {
     color: $color-titulos;
@@ -388,10 +393,6 @@ td {
     padding-left: 20px;
 }
 
-.foto-template{
-    background-position: center center;
-    background-size:cover;
-}
 
 .foto1 {
     @extend .foto-template;

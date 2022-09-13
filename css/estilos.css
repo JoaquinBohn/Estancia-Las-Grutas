@@ -29,6 +29,10 @@
   width: 300px;
   background-position: cover; }
 
+.foto-template, .foto1, .foto2, .foto3, .foto4, .foto5, .foto6 {
+  background-position: center center;
+  background-size: cover; }
+
 /*Etiquetas semanticas*/
 h1 {
   color: #112c01;
@@ -59,8 +63,8 @@ main {
   background-color: rgba(240, 255, 255, 0.801);
   padding-bottom: 10px; }
   main .container {
-    width: 100%;
-    height: 100vh; }
+    height: 100vh;
+    width: 100%; }
 
 header {
   display: flex;
@@ -100,19 +104,6 @@ td {
   background-color: azure; }
 
 /*Grids*/
-/* .grid-inicio {
-    @extend .grid-template;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto auto 400px 600px auto;
-    grid-template-areas: 
-        "header header header"
-        "menu menu menu"
-        "eslogan eslogan eslogan"
-        "presentacion presentacion presentacion"
-        "cabania cabania paseos"
-        "galeria galeria galeria"
-        "footer footer footer";
-} */
 .grid-ubicacion {
   background-color: #9bbbb0;
   grid-template-columns: 1fr;
@@ -280,10 +271,6 @@ td {
 .video {
   grid-area: video;
   padding-left: 20px; }
-
-.foto-template, .foto1, .foto2, .foto3, .foto4, .foto5, .foto6 {
-  background-position: center center;
-  background-size: cover; }
 
 .foto1 {
   background-image: url("../img/estancia-las-grutas.jpg");
