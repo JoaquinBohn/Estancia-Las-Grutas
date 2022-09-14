@@ -34,6 +34,11 @@ $nav-bg-color: #f5f8f8;
 /*320px*/
 @media screen and (max-width: 320px){
 
+    .grid-estadia {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto 200px auto auto auto;
+    }
+
     .tablas{
         grid-template-columns: auto;
         grid-template-rows: auto;
@@ -83,6 +88,22 @@ $nav-bg-color: #f5f8f8;
         grid-template-rows: auto;
     }
 
+    .carousel-estadia{
+        grid-area: carousel;
+        padding-left: 25px;
+        .carousel-inner{
+            .carousel-item{
+                width: 95%;
+                height: 200px;
+                img{
+                    width: 350px;
+                    height: 150px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
     h1{
         font-size: 130%;
     }
@@ -124,6 +145,7 @@ $nav-bg-color: #f5f8f8;
 
     h2{
         font-size: 20px;
+        padding: 20px 0px 10px 20px;
         margin-bottom: 0;
     }
 
@@ -137,7 +159,7 @@ $nav-bg-color: #f5f8f8;
         display: none;
     }
 
-    .carousel {
+    .carousel-inicio {
         display: contents;
         width: 90%;
         height: 250px;
@@ -226,6 +248,11 @@ $nav-bg-color: #f5f8f8;
 /*600px*/
 @media screen and (min-width: 321px) and (max-width: 600px){
 
+    .grid-estadia {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto 300px auto auto auto;
+    }
+
     .tablas{
         grid-template-columns: auto auto;
         grid-template-rows: auto auto;
@@ -252,11 +279,27 @@ $nav-bg-color: #f5f8f8;
     }
 
     h1{
-        font-size: 180%;
+        font-size: 200%;
     }
 
     header{
         height: 100px;
+    }
+
+    .carousel-estadia{
+        grid-area: carousel;
+        padding-left: 45px;
+        .carousel-inner{
+            .carousel-item{
+                width: 90%;
+                height: 300px;
+                img{
+                    width: 450px;
+                    height: 200px;
+                    object-fit: cover;
+                }
+            }
+        }
     }
 
     .menu{
@@ -344,7 +387,9 @@ $nav-bg-color: #f5f8f8;
     }
 
     h2{
-        font-size: 25px;
+        font-size: 35px;
+        padding: 30px 0px 20px 30px;
+
     }
 
     .subtitulo{

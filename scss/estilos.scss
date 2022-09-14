@@ -1,8 +1,8 @@
 /*Variables*/
 $bg-color: #9bbbb0;
 $color-titulos: rgb(17, 44, 1);
-$size-h1: 40px;
-$size-h2: 30px;
+$size-h1: 50px;
+$size-h2: 40px;
 $font-header: 'Cormorant SC', serif;
 $footer-color: #7A918D;
 $color-boton: #d7dfdc8f;
@@ -67,9 +67,8 @@ h1 {
 h2 {
     font-size: $size-h2;
     color: $color-titulos;
-    margin-bottom: 20px;
+    padding: 40px 0px 20px 80px;
     grid-area: titulo;
-    padding-left: 10px;
     .titulo{
         grid-area: titulo;
     }
@@ -157,11 +156,12 @@ td {
 .grid-estadia {
     @extend .grid-template;
     grid-template-columns: auto;
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto 400px auto auto auto;
     grid-template-areas: 
         "header"
         "menu"
         "titulo"
+        "carousel"
         "subtitulo"
         "tablas"
         "footer";
@@ -322,15 +322,31 @@ td {
         color: black;
     }
     h3 {
-        font-size: $size-h1;
+        font-size: $size-h2;
         width: 45%;
         border-radius: 10px;
         background-image: linear-gradient(to right, $card-color, $transparente);
     }
 }
 
-.carousel {
+.carousel-inicio {
     display: none;
+}
+
+.carousel-estadia{
+    grid-area: carousel;
+    padding-left: 150px;
+    .carousel-inner{
+        .carousel-item{
+            width: 80%;
+            height: 400px;
+            img{
+                width: 800px;
+                height: 400px;
+                object-fit: cover;
+            }
+        }
+    }
 }
 
 .subtitulo {
