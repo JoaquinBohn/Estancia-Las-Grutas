@@ -40,15 +40,14 @@ h1 {
   opacity: 0.85;
   text-decoration: underline overline;
   z-index: 2;
-  font-size: 40px;
+  font-size: 50px;
   padding: 3px; }
 
 h2 {
-  font-size: 30px;
+  font-size: 40px;
   color: #112c01;
-  margin-bottom: 20px;
-  grid-area: titulo;
-  padding-left: 10px; }
+  padding: 40px 0px 20px 80px;
+  grid-area: titulo; }
   h2 .titulo {
     grid-area: titulo; }
 
@@ -112,8 +111,8 @@ td {
 
 .grid-estadia {
   grid-template-columns: auto;
-  grid-template-rows: auto auto auto auto auto auto;
-  grid-template-areas: "header" "menu" "titulo" "subtitulo" "tablas" "footer"; }
+  grid-template-rows: auto auto auto 400px auto auto auto;
+  grid-template-areas: "header" "menu" "titulo" "carousel" "subtitulo" "tablas" "footer"; }
 
 .tablas {
   grid-template-areas: "cabania1 cabania2 cabania3";
@@ -211,7 +210,7 @@ td {
   height: 100%;
   background-color: rgba(0, 0, 0, 0);
   opacity: 80%;
-  font-size: 30px;
+  font-size: 40px;
   justify-content: center;
   align-items: center;
   color: rgba(0, 0, 0, 0);
@@ -225,8 +224,19 @@ td {
     border-radius: 10px;
     background-image: linear-gradient(to right, azure, rgba(0, 0, 0, 0)); }
 
-.carousel {
+.carousel-inicio {
   display: none; }
+
+.carousel-estadia {
+  grid-area: carousel;
+  padding-left: 150px; }
+  .carousel-estadia .carousel-inner .carousel-item {
+    width: 80%;
+    height: 400px; }
+    .carousel-estadia .carousel-inner .carousel-item img {
+      width: 800px;
+      height: 400px;
+      object-fit: cover; }
 
 .subtitulo {
   grid-area: subtitulo;
@@ -298,6 +308,9 @@ td {
 
 /*320px*/
 @media screen and (max-width: 320px) {
+  .grid-estadia {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto 200px auto auto auto; }
   .tablas {
     grid-template-columns: auto;
     grid-template-rows: auto;
@@ -323,6 +336,16 @@ td {
   .grid-ubicacion {
     grid-template-columns: auto;
     grid-template-rows: auto; }
+  .carousel-estadia {
+    grid-area: carousel;
+    padding-left: 25px; }
+    .carousel-estadia .carousel-inner .carousel-item {
+      width: 95%;
+      height: 200px; }
+      .carousel-estadia .carousel-inner .carousel-item img {
+        width: 350px;
+        height: 150px;
+        object-fit: cover; }
   h1 {
     font-size: 130%; }
   header {
@@ -360,6 +383,7 @@ td {
     padding-left: 5px; }
   h2 {
     font-size: 20px;
+    padding: 20px 0px 10px 20px;
     margin-bottom: 0; }
   .subtitulo {
     font-size: 15px;
@@ -367,19 +391,19 @@ td {
     padding-top: 0px; }
   main {
     display: none; }
-  .carousel {
+  .carousel-inicio {
     display: contents;
     width: 90%;
     height: 250px; }
-    .carousel .carousel-indicators {
+    .carousel-inicio .carousel-indicators {
       position: absolute absolute;
       top: 360px; }
-    .carousel .carousel-item {
+    .carousel-inicio .carousel-item {
       margin: 10px;
       width: 95%; }
-      .carousel .carousel-item img {
+      .carousel-inicio .carousel-item img {
         height: 250px; }
-      .carousel .carousel-item .carousel-caption {
+      .carousel-inicio .carousel-item .carousel-caption {
         position: absolute;
         left: 0;
         bottom: 0;
@@ -390,10 +414,10 @@ td {
         color: rgba(0, 0, 0, 0);
         background-color: rgba(0, 0, 0, 0);
         transition: color 0.8s, background-color 1s; }
-        .carousel .carousel-item .carousel-caption:hover {
+        .carousel-inicio .carousel-item .carousel-caption:hover {
           background-color: azure;
           color: black; }
-        .carousel .carousel-item .carousel-caption h5 {
+        .carousel-inicio .carousel-item .carousel-caption h5 {
           display: flex;
           font-size: 25px;
           justify-content: flex-start;
@@ -402,9 +426,9 @@ td {
           width: 50%;
           border-radius: 10px;
           background-image: linear-gradient(to right, azure, rgba(0, 0, 0, 0)); }
-        .carousel .carousel-item .carousel-caption p {
+        .carousel-inicio .carousel-item .carousel-caption p {
           padding-left: 5px; }
-    .carousel .carousel-control-prev, .carousel .carousel-control-next {
+    .carousel-inicio .carousel-control-prev, .carousel-inicio .carousel-control-next {
       position: absolute;
       top: 100px; }
   .cabania1, .cabania2, .cabania3, .paseo1, .paseo2, .paseo3 {
@@ -428,6 +452,9 @@ td {
 
 /*600px*/
 @media screen and (min-width: 321px) and (max-width: 600px) {
+  .grid-estadia {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto 300px auto auto auto; }
   .tablas {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
@@ -444,9 +471,19 @@ td {
     grid-template-columns: 1fr;
     grid-template-rows: auto; }
   h1 {
-    font-size: 180%; }
+    font-size: 200%; }
   header {
     height: 100px; }
+  .carousel-estadia {
+    grid-area: carousel;
+    padding-left: 45px; }
+    .carousel-estadia .carousel-inner .carousel-item {
+      width: 90%;
+      height: 300px; }
+      .carousel-estadia .carousel-inner .carousel-item img {
+        width: 450px;
+        height: 200px;
+        object-fit: cover; }
   .menu {
     justify-content: flex-end;
     opacity: 1; }
@@ -509,7 +546,8 @@ td {
   .row p {
     font-size: 12px; }
   h2 {
-    font-size: 25px; }
+    font-size: 35px;
+    padding: 30px 0px 20px 30px; }
   .subtitulo {
     font-size: 20px;
     padding-left: 10px;
