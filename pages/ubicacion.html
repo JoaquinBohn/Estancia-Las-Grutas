@@ -16,58 +16,88 @@
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
-    <div class="grid-ubicacion">
-        <header>
-            <h1>Estancia Las Grutas</h1>
-        </header>
+
+    <header>
+        <h1>Estancia Las Grutas</h1>
+    </header>
     
         <!-- Menu -->
-        <div class="menu">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="./ubicacion.html">Ubicación</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Home</a>
-                          </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./estadia.html">Estadía</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./paseos.html">Paseos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./galeria.html">Galería</a>
-                        </li>
-                    </ul>
-                  </div>
-                </div>
-            </nav>
-        </div>
-
-
-        <h2 class="titulo">Ubicacion</h2>
-
-        
-        <h3 class="subtitulo">Cómo llegar</h3>
-        <div class="descripcion">
-            <h4>La mejor opción es partir desde la localidad de Pigüé</h4>
-            <p>Desde Google Maps podrás ver el recorrido de cómo llegar a la estancia.</p>
-        </div>
-        <div class="mapa">
-            <iframe class="mapa-embebido" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42457.12773348851!2d-62.20615497560799!3d-37.728012210047524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95eb84073b96063f%3A0xd6058d3364ebf2b3!2sEstancia%20Las%20Grutas!5e0!3m2!1ses-419!2sar!4v1658374012339!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    
-        <footer>
-            <h3>Info ubicacion</h3>
-            <h3>Contacto</h3>
-            <h3>Redes</h3>
-        </footer>
+    <div class="menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="./ubicacion.html">Ubicación</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./estadia.html">Estadía</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./paseos.html">Paseos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./galeria.html">Galería</a>
+                    </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
     </div>
+
+
+    <h2>Ubicacion</h2>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <h3 class="subtitulo">Cómo llegar</h3>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 col-xs-6">
+                <img src="../img/pigue.jpg" alt="mapa de Argentina y provincia de Buenos Aires">
+            </div>
+            <div class="col-md-6 col-xs-6">
+                <h4>La mejor opción es partir desde la localidad de Pigüé</h4>
+                <p>Desde allí hasta la estancia son unos 44 kilometros de camino de tierra con vista 
+                    a hermosos paisajes serranos. Se recomienda el uso de vehículos resistentes al terreno.
+                </p>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-xs-12">
+                <h4 class="recomendacion">Te recomendamos usar Google Maps para poder trazar tu ruta.</h4>
+            </div>
+            <div class="col-md-8 col-xs-12">
+                <iframe class="mapa-embebido" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42457.12773348851!2d-62.20615497560799!3d-37.728012210047524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95eb84073b96063f%3A0xd6058d3364ebf2b3!2sEstancia%20Las%20Grutas!5e0!3m2!1ses-419!2sar!4v1658374012339!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <h4>Info servicios de transporte</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xs-6">
+                <img src="../img/estacion.jpg" alt="estacion de trenes de Pigüé">
+            </div>
+            <div class="col-md-6 col-xs-6">
+                <p><a href="https://www.argentina.gob.ar/transporte/trenes">Trenes Argentinos</a></p>
+                <p>Terminal de omnibus de Pigüé: 2923-2868</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <h3>Copy</h3>
+    </footer>
     
     <script src="../js/bootstrap.bundle.min.js"></script>
 </body>

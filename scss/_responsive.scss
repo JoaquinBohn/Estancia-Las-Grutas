@@ -1,8 +1,8 @@
 $size-h: 15px;
-$toggler-color: #58887f;
-$bg-color: #9bbbb0;
+$toggler-color: #c6dad6;
+$bg-color: #cadbc0;
 $nav-bg-color: #f5f8f8;
-
+$row-color: #acd197b6;
 
 @mixin menu{
     justify-content: flex-end;
@@ -34,33 +34,6 @@ $nav-bg-color: #f5f8f8;
 /*320px*/
 @media screen and (max-width: 320px){
 
-    .grid-estadia {
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto 200px auto auto auto;
-    }
-
-    .tablas{
-        grid-template-columns: auto;
-        grid-template-rows: auto;
-        grid-template-areas: 
-            "cabania1"
-            "cabania2"
-            "cabania3";
-        gap: 20px;
-        padding: 10px;
-    }
-
-    .tablas-paseos{
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto;
-        grid-template-areas: 
-            "paseo1"
-            "paseo2"
-            "paseo3";
-        gap: 20px;
-        padding: 10px;
-    }
-
     .grid-galeria {
         grid-template-columns: auto;
         grid-template-rows: auto auto auto auto auto;
@@ -83,24 +56,47 @@ $nav-bg-color: #f5f8f8;
         margin: 0 20px 5px 5px;
     }
 
-    .grid-ubicacion{
-        grid-template-columns: auto;
-        grid-template-rows: auto;
-    }
-
     .carousel-estadia{
-        grid-area: carousel;
-        padding-left: 25px;
         .carousel-inner{
             .carousel-item{
-                width: 95%;
-                height: 200px;
+                @include sizes(150px, 100%);
                 img{
-                    width: 350px;
-                    height: 150px;
+                    @include sizes(150px, 350px);
                     object-fit: cover;
                 }
             }
+        }
+    }
+
+    .tablas-paseos{
+        display: none;
+    }
+
+    .paseitos {
+        display: contents;
+        width: 100%;
+        .carousel-indicators {
+            filter: invert(100%);
+            position: relative;
+            top: 280px;
+        }
+        .carousel-inner{
+            .carousel-item {
+                @include sizes(250px, 95%);
+                position: absolute absolute;
+                left: 35px;
+            }
+        }
+        .carousel-control-prev {
+            filter: invert(100%);
+            position: absolute absolute;
+            top: 1900px;
+        }
+        .carousel-control-next {
+            filter: invert(100%);
+            position: absolute absolute;
+            top: 1900px;
+            right: 0;
         }
     }
 
@@ -112,6 +108,19 @@ $nav-bg-color: #f5f8f8;
         height: 100px;
     }
 
+    .container{
+        width: 95%;
+        padding: 3px;
+    }
+
+    .col{
+        margin: 3px
+    }
+
+    .row{
+        margin: 5px;
+    }
+
     .menu{
         @include menu;
         .navbar{
@@ -119,7 +128,7 @@ $nav-bg-color: #f5f8f8;
             .container-fluid {
                 background-color: $bg-color;
                 .navbar-brand {
-                    font-size: 17px;
+                    font-size: $size-h;
                 }
                 .navbar-toggler {
                     @include navbar-toggler;
@@ -144,32 +153,44 @@ $nav-bg-color: #f5f8f8;
     }
 
     h2{
-        font-size: 20px;
-        padding: 20px 0px 10px 20px;
+        font-size: 25px;
+        padding: 10px 0px 10px 20px;
         margin-bottom: 0;
     }
 
-    .subtitulo{
+    h3{
         font-size: $size-h;
-        padding-left: 10px;
-        padding-top: 0px;
+        font-weight: 600;
     }
 
-    main{
+    h4{
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .subtitulo{
+        font-size: 20px;
+        padding-left: 10px;
+        padding-top: 0px;
+        font-weight: 600;
+        color: $color-titulos;
+    }
+
+    .tarjetas{
         display: none;
     }
 
     .carousel-inicio {
         display: contents;
-        width: 90%;
-        height: 250px;
+        @include sizes(250px, 90%);
         .carousel-indicators {
-            position: absolute absolute;
-            top: 360px;
+            filter: invert(100%);
+            position: relative;
+            top: 300px;
         }
         .carousel-item {
-            margin: 10px;
-            width: 95%;
+            left: 15px;
+            width: 90%;
             img {
                 height: 250px;
             }
@@ -177,8 +198,7 @@ $nav-bg-color: #f5f8f8;
                 position: absolute;
                 left: 0;
                 bottom: 0;
-                width: 100%;
-                height: 100%;
+                @include sizes(100%, 100%);
                 text-align: left;
                 opacity: 0.8;
                 color: $transparente;
@@ -204,22 +224,19 @@ $nav-bg-color: #f5f8f8;
             }
         }
         .carousel-control-prev {
-            position: absolute;
-            top: 100px;
+            filter: invert(100%);
+            position: absolute absolute;
+            top: 1750px;
         }
         .carousel-control-next {
-            @extend .carousel-control-prev;
+            filter: invert(100%);
+            position: absolute absolute;
+            top: 1750px;
         }
     }
 
-    .cabania1, .cabania2, .cabania3, .paseo1, .paseo2, .paseo3 {
-        width: 230px;
-        height: 110px;
-    }
-
-    .video-embebido {
-        width: 80%;
-        height: 200px;
+    .paseo1, .paseo2, .paseo3 {
+        @include sizes(110px, 230px);
     }
 
     .descripcion{
@@ -232,26 +249,71 @@ $nav-bg-color: #f5f8f8;
         }
     }
 
+    .info{
+        @include sizes(50px, 100%);
+        background-color: rgba(240, 255, 255, 0.432);
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        text-align: center;
+        p{
+          font-size: $size-h;
+          position: relative;
+          top: 5px;
+          padding: 0 5px 0 5px;
+        }
+    }
+
     .mapa-embebido{
-        width: 80%;
-        height: 300px;
+        @include sizes(250px, 100%);
     }
 
     footer {
         margin-top: 50px;
-        h3{
-        font-size: $size-h;
+    }
+
+    .col-xs-6{
+        img{
+            @include sizes(130px, 200px);
+            padding-bottom: 5px;
         }
+    }
+
+    .col-xs-4{
+        width: 300px;
+        padding-left: 5px;
+        .card{
+            margin-top: 10px;
+            height: 200px;
+            .card-description{
+                p{
+                    font-size: $size-h;
+                }
+                h3 {
+                    padding-left: 5px;
+                    font-size: $size-h+10;
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+    .container{
+        h3{
+            padding-bottom: 15px;
+        }
+    }
+
+    .row{
+        background-color: $row-color;
+        margin-bottom: 15px;
+        padding: 5px;
+        text-align: center;
     }
 }
 
 /*600px*/
 @media screen and (min-width: 321px) and (max-width: 600px){
-
-    .grid-estadia {
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto 300px auto auto auto;
-    }
 
     .tablas{
         grid-template-columns: auto auto;
@@ -263,21 +325,6 @@ $nav-bg-color: #f5f8f8;
         padding: 10px;
     }
 
-    .tablas-paseos{
-        grid-template-columns: auto auto;
-        grid-template-rows: auto;
-        grid-template-areas: 
-            "paseo1 paseo2"
-            "paseo3 paseo3";
-        gap: 20px;
-        padding: 10px;
-    }
-
-    .grid-ubicacion{
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-
     h1{
         font-size: 200%;
     }
@@ -287,19 +334,52 @@ $nav-bg-color: #f5f8f8;
     }
 
     .carousel-estadia{
-        grid-area: carousel;
-        padding-left: 45px;
         .carousel-inner{
             .carousel-item{
-                width: 90%;
-                height: 300px;
+                @include sizes(200px, 100%);
                 img{
-                    width: 450px;
-                    height: 200px;
+                    @include sizes(200px, 450px);
                     object-fit: cover;
                 }
             }
         }
+    }
+
+    .paseitos {
+        display: contents;
+        width: 100%;
+        .carousel-indicators {
+            filter: invert(100%);
+            position: relative;
+            top: 330px;
+        }
+        .carousel-inner{
+            .carousel-item {
+                @include sizes(280px, 95%);
+                position: absolute absolute;
+                left: 130px;
+            }
+        }
+        .carousel-control-prev {
+            filter: invert(100%);
+            position: absolute absolute;
+            top: 1600px;
+        }
+        .carousel-control-next {
+            filter: invert(100%);
+            position: absolute absolute;
+            top: 1600px;
+            right: 0;
+        }
+    }
+
+    .tabla1{
+        position: absolute absolute;
+        left: 300px;
+    }
+
+    .tablas-paseos{
+        display: none;
     }
 
     .menu{
@@ -309,7 +389,7 @@ $nav-bg-color: #f5f8f8;
             .container-fluid {
                 background-color: $bg-color;
                 .navbar-brand {
-                    font-size: 17px;
+                    font-size: $size-h+2;
                 }
                 .navbar-toggler {
                     @include navbar-toggler;
@@ -334,13 +414,7 @@ $nav-bg-color: #f5f8f8;
     }
 
     .paseo1, .paseo2, .paseo3 {
-        width: 250px;
-        height: 150px;
-    }
-
-    .video-embebido {
-        width: 80%;
-        height: 300px;
+        @include sizes(150px, 250px);
     }
 
     .card{
@@ -351,49 +425,71 @@ $nav-bg-color: #f5f8f8;
             }
             h3 {
                 padding-left: 5px;
-                font-size: 25px;
+                font-size: $size-h+10;
                 width: 50%;
             }
         }
     }
 
+    .col-xs-2{
+        width: 50px;
+    }
+
     .col-xs-4{
-        width: 100px;
-        img{
-            width: 150px;
-            height: 100px;
+        width: 150px;
+        .card{
+            .card-description{
+                p{
+                    font-size: 12px;
+                }
+                h3 {
+                    padding-left: 5px;
+                    font-size: $size-h+5;
+                    width: 80%;
+                }
+            }
         }
     }
     
     .col-xs-6{
         width: 225px;
         img{
-            width: 200px;
-            height: 140px;
+            @include sizes(140px, 200px);
         }
     }
 
     .col-xs-8{
         width: 400px;
+        img{
+            @include sizes(200px, 250px);
+        }
+    }
+
+    .col-xs-10{
+        width: 200px;
     }
 
     .row{
+        h3{
+            font-size: $size-h+10;
+            font-weight: 600;
+        }
         h4{
-            font-size: $size-h;
+            font-size: $size-h+5;
+            font-weight: 500;
         }
         p{
-            font-size: 12px;
+            font-size: $size-h - 1;
         }
     }
 
     h2{
-        font-size: 35px;
-        padding: 30px 0px 20px 30px;
-
+        font-size: $size-h+20;
+        padding: 20px 0px 20px 20px;
     }
 
     .subtitulo{
-        font-size: 20px;
+        font-size: $size-h+5;
         padding-left: 10px;
         padding-top: 0;
     }
@@ -402,13 +498,27 @@ $nav-bg-color: #f5f8f8;
         font-size: 12px;
         padding-right: 5px;
         p{
-            font-size: 17px;
+            font-size: $size-h+2;
         }
     }
 
-    iframe{
-        width: 80%;
-        height: 500px;
+    .info{
+        @include sizes(70px, 100%);
+        background-color: rgba(240, 255, 255, 0.432);
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        text-align: center;
+        p{
+          font-size: $size-h+5;
+          position: relative;
+          top: 10px;
+          padding: 0 5px 0 5px;
+        }
+    }
+
+    .mapa-embebido{
+        @include sizes(400px, 100%);
     }
 
     footer{
