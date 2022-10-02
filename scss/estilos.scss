@@ -5,6 +5,7 @@ $main-color: rgba(240, 255, 255, 0.801);
 $color-titulos: rgb(17, 44, 1);
 $size-h1: 50px;
 $size-h2: 40px;
+$size-h3: 30px;
 $font-header: 'Cormorant SC', serif;
 $footer-color: #8dac7b;
 $color-boton: rgba(240, 255, 255, 0.801);
@@ -31,8 +32,7 @@ $card-color: azure;
 }
 
 .tabla-template {
-    width: 300px;
-    height: 200px;
+    @include sizes(200px, 300px);
     background-position: center center;
     background-size: cover;
 }
@@ -100,8 +100,7 @@ header {
     flex-direction: column;
     justify-content: end;
     font-family: $font-header;
-    width: 100%;
-    height: 270px;
+    @include sizes(270px, 100%);
     background-image: url('../img/sierras2.png');
     background-position: center center;
     background-size: cover;
@@ -142,62 +141,11 @@ td {
 
 /*Grids*/
 
-.grid-ubicacion {
-    @extend .grid-template;
-    background-color: $bg-color;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto auto auto;
-    grid-template-areas: 
-        "header"
-        "menu"
-        "titulo"
-        "subtitulo"
-        "descripcion"
-        "mapa"
-        "footer";
-}
-
-.grid-estadia {
-    @extend .grid-template;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto auto 400px auto auto auto;
-    grid-template-areas: 
-        "header"
-        "menu"
-        "titulo"
-        "carousel"
-        "subtitulo"
-        "tablas"
-        "footer";
-}
-
 .tablas {
     @extend .tablas-template;
     grid-template-areas: 
         "cabania1 cabania2 cabania3";
     grid-area: tablas;
-}
-
-.grid-paseos {
-    @extend .grid-template;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto auto auto auto auto auto auto;
-    grid-template-areas: 
-        "header"
-        "menu"
-        "titulo"
-        "descripcion"
-        "video"
-        "subtitulo"
-        "tablas-paseos"
-        "footer";
-}
-
-.tablas-paseos {
-    @extend .tablas-template;
-    grid-template-areas: 
-        "paseo1 paseo2 paseo3";
-    grid-area: tablas-paseos;
 }
 
 .grid-galeria {
@@ -231,8 +179,19 @@ td {
 
 .col-md-4{
     img{
-        width: 300px;
-        height: 240px;
+        @include sizes(240px, 300px);
+    }
+}
+
+.col-md-6{
+    img{
+        @include sizes(350px, 500px);
+    }
+}
+
+.col-md-8{
+    img{
+        @include sizes(450px, 650px);
     }
 }
 
@@ -272,13 +231,8 @@ td {
 
 }
 
-.eslogan{
-    padding-left: 10px;
-    margin-bottom: 10px;
-    grid-area: eslogan;
-}
-
 .card{
+    height: 300px;
     background-position: center center;
     background-size: cover;
     border-radius: 5px;
@@ -288,23 +242,48 @@ td {
 }
 
 .card-estadia {
-    height: 300px;
-    grid-area: cabania;
     background-image: url("../img/cabania.jpg");
     @extend .card;
 }
 
 .card-paseos {
-    height: 300px;
-    grid-area: paseos;
     background-image: url("../img/paseo.jpg");
     @extend .card;
 }
 
 .card-galeria {
+    @extend .card;
     height: 400px;
-    grid-area: galeria;
     background-image: url("../img/sierras3.jpg");
+}
+
+.card-cabania1 {
+    background-image: url("../img/cabania1.jpg");
+    @extend .card;
+}
+
+.card-cabania2 {
+    background-image: url("../img/cabania2.jpg");
+    @extend .card;
+}
+
+.card-cabania3 {
+    background-image: url("../img/cabania3.jpg");
+    @extend .card;
+}
+
+.card-paseo1 {
+    background-image: url("../img/paseo1.jpg");
+    @extend .card;
+}
+
+.card-paseo2 {
+    background-image: url("../img/paseo2.jpg");
+    @extend .card;
+}
+
+.card-paseo3 {
+    background-image: url("../img/paseo3.jpg");
     @extend .card;
 }
 
@@ -312,8 +291,7 @@ td {
     display: grid;
     position: relative;
     bottom: 0;
-    width: 100%;
-    height: 100%;
+    @include sizes(100%, 100%);
     background-color: $transparente;
     opacity: 80%;
     font-size: $size-h2;
@@ -326,8 +304,9 @@ td {
         color: black;
     }
     h3 {
-        font-size: $size-h2;
-        width: 45%;
+        color: $color-titulos;
+        font-size: $size-h3;
+        width: 70%;
         border-radius: 10px;
         background-image: linear-gradient(to right, $card-color, $transparente);
     }
@@ -337,16 +316,23 @@ td {
     display: none;
 }
 
+.paseitos{
+    display: none;
+}
+
+.tablas-paseos{
+    display: contents;
+    row{
+        height: 500px;
+    }
+}
+
 .carousel-estadia{
-    grid-area: carousel;
-    padding-left: 200px;
     .carousel-inner{
         .carousel-item{
-            width: 80%;
-            height: 400px;
+            @include sizes(400px, 100%);
             img{
-                width: 800px;
-                height: 400px;
+                @include sizes(400px, 800px);
                 object-fit: cover;
             }
         }
@@ -364,36 +350,17 @@ td {
 }
 
 .info{
-    width: 100%;
-    height: 100px;
+    @include sizes(100px, 100%);
     background-color: rgba(240, 255, 255, 0.432);
     position: absolute;
     bottom: 0px;
     left: 0px;
     text-align: center;
     p{
-      font-size: 30px;
+      font-size: $size-h3;
       position: relative;
       top: 20px;
     }
-}
-
-.cabania1 {
-    @extend .tabla-template;
-    background-image: url("../img/cabania1.jpg");
-    grid-area: cabania1;
-}
-
-.cabania2 {
-    @extend .tabla-template;
-    background-image: url("../img/cabania2.jpg");
-    grid-area: cabania2;
-}
-
-.cabania3 {
-    @extend .tabla-template;
-    background-image: url("../img/cabania3.jpg");
-    grid-area: cabania3;
 }
 
 .paseo1 {
@@ -414,20 +381,18 @@ td {
     grid-area: paseo3;
 }
 
-.mapa {
-    display: flex;
-    grid-area: mapa;
-    grid-column: 1 / 3;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+.tabla1{
+    @extend .tabla-template;
+    padding-bottom: 10px;
 }
 
-.video {
-    grid-area: video;
-    padding-left: 20px;
+.tabla2{
+    @extend .tabla1;
 }
 
+.tabla3{
+    @extend .tabla1;
+}
 
 .foto1 {
     @extend .foto-template;
